@@ -52,14 +52,14 @@ p {
 }
 
 main {
-  width: 100%;
+  width: calc(100% - 120px);
   min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
   box-sizing: inherit;
   position: relative;
+  padding: 1rem 1rem 1rem 120px;
 }
 
 .angular-logo {

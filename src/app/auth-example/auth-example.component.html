@@ -1,0 +1,19 @@
+<div class="d-flex flex-column align-items-center">
+  <div *ngIf="authService.isAuthenticated$ | async">
+    <!-- Ваш защищенный контент -->
+    <p>Защищенный контент</p>
+    <button (click)="logout()">Выйти</button>
+    <button (click)="authService.refreshSession()">Жестко обновить</button>
+  </div>
+  <div *ngIf="!(authService.isAuthenticated$ | async)">
+    <!-- Ваш контент для неаутентифицированных пользователей -->
+    <p>Пожалуйста, войдите</p>
+    <button (click)="login()">Войти</button>
+  </div>
+  userData
+  <pre>{{ authService.userData$ | async | json }}</pre>
+
+
+  Configuration loaded:
+  <pre>{{ authService.configuration$ | async | json }}</pre>
+</div>
