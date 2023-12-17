@@ -1,14 +1,27 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthExampleComponent } from './auth-example/auth-example.component';
+import { AuthModalComponent } from './auth-modal/auth-modal.component';
+import { AuthService } from './core/auth.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  selector: 'cs-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'casino-frontend';
+
+  constructor(
+    private modalService: NgbModal,
+    public authService: AuthService,
+  ) {}
+
+  public login() {
+    this.modalService.open(AuthModalComponent, { centered: true });
+  }
+
+  public logout() {
+    this.authService.logout();
+  }
 }
