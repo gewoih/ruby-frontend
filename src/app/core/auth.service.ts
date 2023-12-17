@@ -55,7 +55,9 @@ export class AuthService {
   }
 
   logout() {
-    this.oauthService.logoff().subscribe((result) => console.log(result));
+    this.oauthService.logoffAndRevokeTokens().subscribe((result) => {
+      console.log(result);
+    });
   }
 
   public refreshSession() {

@@ -4,8 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthService } from './core/auth.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AuthConfigModule } from './auth/auth-config.module';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { AuthConfigModule } from './auth/auth-config.module';
     HttpClientModule,
     AuthConfigModule,
   ],
-  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
