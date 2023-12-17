@@ -18,16 +18,6 @@ export class AuthService {
   public isAuthenticated$: Observable<boolean> =
     this.isAuthenticatedSubject.asObservable();
 
-  private authConfig = {
-    issuer: 'https://localhost:7220',
-    redirectUri: window.location.origin + '/callback',
-    clientId: 'web_app',
-    scope: 'all',
-    responseType: 'code',
-    showDebugInformation: true,
-  };
-  private popupWindow: Window | null = null;
-
   constructor(private oauthService: OidcSecurityService) {
     this.configuration$ = this.oauthService.getConfiguration();
     this.userData$ = this.oauthService.userData$;
@@ -40,12 +30,12 @@ export class AuthService {
     });
 
     this.oauthService.isAuthenticated$.subscribe((r) => {
+      this.isAuthenticatedSubject.next(r.isAuthenticated);
       console.info('authenticated: ', r.isAuthenticated);
     });
     this.oauthService
       .checkAuth()
       .subscribe(({ isAuthenticated, userData, accessToken, errorMessage }) => {
-        this.isAuthenticatedSubject.next(isAuthenticated);
         console.log(isAuthenticated);
         console.log(userData);
         console.log(accessToken);
@@ -57,7 +47,6 @@ export class AuthService {
     this.oauthService
       .authorizeWithPopUp()
       .subscribe(({ isAuthenticated, userData, accessToken, errorMessage }) => {
-        this.isAuthenticatedSubject.next(isAuthenticated);
         console.log(isAuthenticated);
         console.log(userData);
         console.log(accessToken);
