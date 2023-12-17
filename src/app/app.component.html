@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed w-100">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -21,6 +21,15 @@
         </li>
       </ul>
     </div>
+    <button type="button" class="btn btn-outline-warning" (click)="login()"
+            *ngIf="!(authService.isAuthenticated$ | async)">
+      <i class="bi bi-box-arrow-in-right"></i>
+      Login
+    </button>
+    <button type="button" class="btn btn-outline-warning" (click)="logout()"
+            *ngIf="authService.isAuthenticated$ | async">
+      Logout
+    </button>
   </div>
 </nav>
 
@@ -30,8 +39,9 @@
     <cs-sidebar></cs-sidebar>
     <!-- Main Content -->
     <div class="d-flex flex-column w-100 h-100 p-0">
-      <div class="main"></div>
-      <router-outlet></router-outlet>
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>

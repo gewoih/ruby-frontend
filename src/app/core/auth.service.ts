@@ -5,6 +5,7 @@ import {
   OpenIdConfiguration,
   UserDataResult,
 } from 'angular-auth-oidc-client';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +18,10 @@ export class AuthService {
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   public isAuthenticated$: Observable<boolean> =
     this.isAuthenticatedSubject.asObservable();
+
+  private authorizationCompletedSubject = new BehaviorSubject<boolean>(false);
+  public authorizationCompleted$: Observable<boolean> =
+    this.authorizationCompletedSubject.asObservable();
 
   constructor(private oauthService: OidcSecurityService) {
     this.configuration$ = this.oauthService.getConfiguration();
@@ -44,9 +49,12 @@ export class AuthService {
   }
 
   login() {
-    this.oauthService
+    return this.oauthService
       .authorizeWithPopUp()
       .subscribe(({ isAuthenticated, userData, accessToken, errorMessage }) => {
+        if (isAuthenticated) {
+          this.authorizationCompletedSubject.next(true);
+        }
         console.log(isAuthenticated);
         console.log(userData);
         console.log(accessToken);

@@ -1,3 +1,5 @@
+@import "/src/styles/variables.scss";
+
 .sidebar {
   position: fixed;
   top: 56px; /* Высота фиксированного Navbar сверху */
@@ -7,6 +9,9 @@
   padding: 20px;
   background-color: #f8f9fa; /* Цвет фона боковой панели */
   border-right: 1px solid #dee2e6;
+  width: $sidebar_width;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-link {

@@ -6,6 +6,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthConfigModule } from './auth/auth-config.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { AuthConfigModule } from './auth/auth-config.module';
     SidebarComponent,
     HttpClientModule,
     AuthConfigModule,
+    NgbModule,
   ],
   bootstrap: [AppComponent],
 })
