@@ -37,17 +37,18 @@
 }
 
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: inherit;
   position: relative;
-  padding: $header_height 0 0 $sidebar_width;
-  flex-direction: column;
+  padding: 0 0 0 $sidebar_width;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  scrollbar-width: thin !important;
 }
 
-nav{
+.navbar {
   z-index: 1000;
+  height: $header_height;
 }
 
 @media screen and (max-width: 650px) {

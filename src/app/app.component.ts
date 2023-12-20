@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AuthExampleComponent } from './auth-example/auth-example.component';
-import { AuthModalComponent } from './auth-modal/auth-modal.component';
-import { AuthService } from './core/auth.service';
+import { AuthModalComponent } from './shared/auth-modal/auth-modal.component';
+import { AuthService } from './core/auth/auth.service';
 
 @Component({
   selector: 'cs-root',

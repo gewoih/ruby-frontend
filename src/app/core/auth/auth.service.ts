@@ -5,7 +5,6 @@ import {
   OpenIdConfiguration,
   UserDataResult,
 } from 'angular-auth-oidc-client';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
   providedIn: 'root',
