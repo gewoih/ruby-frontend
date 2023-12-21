@@ -3,7 +3,7 @@ import { AuthService } from '../../core/auth/auth.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-auth-modal',
+  selector: 'cs-auth-modal',
   standalone: true,
   imports: [],
   templateUrl: './auth-modal.component.html',

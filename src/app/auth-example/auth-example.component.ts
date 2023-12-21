@@ -3,7 +3,7 @@ import { AuthService } from '../core/auth/auth.service';
 import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-auth-example',
+  selector: 'cs-auth-example',
   standalone: true,
   imports: [NgIf, AsyncPipe, JsonPipe],
   templateUrl: './auth-example.component.html',

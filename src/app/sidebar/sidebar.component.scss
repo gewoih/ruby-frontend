@@ -1,29 +1,71 @@
-@import "/src/styles/variables.scss";
+@import '/src/styles/variables.scss';
 
 .sidebar {
-  position: fixed;
-  top: 56px; /* Высота фиксированного Navbar сверху */
-  bottom: 0;
+  background: #263238;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
+  width: $collapsed-sidebar-width;
+  height: 100%;
+  box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
   left: 0;
-  z-index: 1000;
-  padding: 20px;
-  background-color: #f8f9fa; /* Цвет фона боковой панели */
-  border-right: 1px solid #dee2e6;
-  width: $sidebar_width;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
+.sidebar-nav {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.nav-link {
-  color: #495057;
+  .sidebar-item {
+    width: 100%;
+    margin-bottom: 0.625rem;
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      color: #f3f3f3;
+      transition: all 0.3s ease;
+      border-radius: 0.625rem;
+
+      .item-icon {
+        font-size: 22px;
+        width: 2rem;
+        min-width: 2rem;
+        margin: 0 0.5rem;
+        text-align: center;
+      }
+
+      .item-text {
+        margin-left: 1.5rem;
+      }
+    }
+  }
 }
 
-.nav-link:hover {
-  background-color: #e9ecef;
+.sidebar-collapsed {
+  width: $sidebar-width;
 }
 
-.nav-link.active {
-  font-weight: bold;
-  background-color: #007bff;
-  color: #fff;
+.sidebar-item:hover {
+  .sidebar-link {
+    background-color: #fff;
+  }
+  .item-icon {
+    color: #000;
+  }
+  .item-text {
+    color: #000;
+  }
+}
+.collapse-button {
+  color: white;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
