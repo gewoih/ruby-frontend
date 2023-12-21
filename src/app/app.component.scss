@@ -46,6 +46,8 @@
 }
 
 .main {
+  //background-color: #232d33;
+  background-color: #30373b;
   position: relative;
   display: flex;
   overflow-x: hidden;
@@ -58,6 +60,7 @@
     width: 100%;
     overflow-y: auto;
   }
+  color: #999999;
 }
 .navbar {
   z-index: 1000;

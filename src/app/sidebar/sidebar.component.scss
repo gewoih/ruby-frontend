@@ -1,17 +1,19 @@
 @import '/src/styles/variables.scss';
 
 .sidebar {
-  background: #263238;
+  //background-color: #263238;
+  background-color: #232d33;
   transition: all 0.5s ease;
   position: relative;
   z-index: 1;
   width: $sidebar-width;
   height: 100%;
-  box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+  //box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
   left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 20px;
 }
 .sidebar-nav {
   list-style: none;
@@ -29,7 +31,7 @@
       display: flex;
       align-items: center;
       height: 3rem;
-      color: #f3f3f3;
+      color: #ffc107;
       transition: all 0.3s ease;
       border-radius: 0.625rem;
 
@@ -57,7 +59,7 @@
 
 .sidebar-item:hover {
   .sidebar-link {
-    background-color: #fff;
+    background-color: #ffc107;
   }
   .item-icon {
     color: #000;
