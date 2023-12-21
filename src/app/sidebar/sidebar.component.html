@@ -1,19 +1,19 @@
 <div class="sidebar" [ngClass]="collapsed ? 'sidebar-collapsed' : ''">
   <ul class="sidebar-nav">
-    <li class="sidebar-item">
+    <li class="sidebar-item" title="Home">
       <a class="nav-link sidebar-link" routerLink="/">
         <i class="item-icon bi bi-house"></i>
-        <span class="item-text" *ngIf="collapsed">Home</span>
+        <span class="item-text">Home</span>
       </a>
     </li>
-    <li class="sidebar-item">
+    <li class="sidebar-item" title="About">
       <a class="nav-link sidebar-link" routerLink="/about">
         <i class="item-icon bi bi-info"></i>
-        <span class="item-text" *ngIf="collapsed">About</span>
+        <span class="item-text">About</span>
       </a>
     </li>
   </ul>
   <div class="collapse-button" (click)="toggleCollapse()">
-    <i [ngClass]="collapsed ? 'bi bi-chevron-double-left' : 'bi bi-chevron-double-right'"></i>
+    <i [ngClass]="collapsed ? 'bi bi-chevron-double-right' : 'bi bi-chevron-double-left'"></i>
   </div>
 </div>

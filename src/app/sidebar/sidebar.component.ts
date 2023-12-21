@@ -10,7 +10,7 @@ import { NgClass, NgIf } from '@angular/common';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  collapsed = true;
+  collapsed = false;
 
   toggleCollapse() {
     this.collapsed = !this.collapsed;

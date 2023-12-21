@@ -5,7 +5,7 @@
   transition: all 0.5s ease;
   position: relative;
   z-index: 1;
-  width: $collapsed-sidebar-width;
+  width: $sidebar-width;
   height: 100%;
   box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
   left: 0;
@@ -49,7 +49,10 @@
 }
 
 .sidebar-collapsed {
-  width: $sidebar-width;
+  width: $collapsed-sidebar-width;
+  .item-text {
+    display: none;
+  }
 }
 
 .sidebar-item:hover {
