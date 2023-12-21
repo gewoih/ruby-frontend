@@ -1,13 +1,19 @@
-<nav class="sidebar">
-  <div class="sticky-top">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/about">About</a>
-      </li>
-      <!-- Добавьте дополнительные пункты меню, если необходимо -->
-    </ul>
+<div class="sidebar" [ngClass]="collapsed ? 'sidebar-collapsed' : ''">
+  <ul class="sidebar-nav">
+    <li class="sidebar-item">
+      <a class="nav-link sidebar-link" routerLink="/">
+        <i class="item-icon bi bi-house"></i>
+        <span class="item-text" *ngIf="collapsed">Home</span>
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a class="nav-link sidebar-link" routerLink="/about">
+        <i class="item-icon bi bi-info"></i>
+        <span class="item-text" *ngIf="collapsed">About</span>
+      </a>
+    </li>
+  </ul>
+  <div class="collapse-button" (click)="toggleCollapse()">
+    <i [ngClass]="collapsed ? 'bi bi-chevron-double-left' : 'bi bi-chevron-double-right'"></i>
   </div>
-</nav>
+</div>
