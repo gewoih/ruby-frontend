@@ -25,14 +25,9 @@ export class AuthService {
   constructor(private oauthService: OidcSecurityService) {
     this.configuration$ = this.oauthService.getConfiguration();
     this.userData$ = this.oauthService.userData$;
-    this.initAuth();
   }
 
-  private initAuth() {
-    this.oauthService.stsCallback$.subscribe((result) => {
-      console.log(result);
-    });
-
+  public initAuth() {
     this.oauthService.isAuthenticated$.subscribe((r) => {
       this.isAuthenticatedSubject.next(r.isAuthenticated);
       console.info('authenticated: ', r.isAuthenticated);

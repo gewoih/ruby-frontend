@@ -1,0 +1,8 @@
+{
+  "api": {
+    "gatewayUrl": "https://localhost:7220"
+  },
+  "issuer": {
+    "url": "https://localhost:7220"
+  }
+}

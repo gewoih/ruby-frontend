@@ -4,12 +4,13 @@ import {
   AuthModule,
   DefaultLocalStorageService,
 } from 'angular-auth-oidc-client';
+import { ConfigService } from '../config.service';
 
 @NgModule({
   imports: [
     AuthModule.forRoot({
       config: {
-        authority: 'https://localhost:7220',
+        authority: ConfigService.config.issuer.url,
         redirectUrl: window.location.origin,
         postLogoutRedirectUri: window.location.origin,
         clientId: 'web_app',
