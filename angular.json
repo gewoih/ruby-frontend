@@ -30,6 +30,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/service-worker.js",
               {
                 "glob": "oidc-client.min.js",
                 "input": "./node_modules/oidc-client/dist/",
@@ -38,7 +39,9 @@
             ],
             "styles": [
               "src/styles/main.scss"
-            ]
+            ],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -125,7 +128,9 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/service-worker.js",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles/main.scss"

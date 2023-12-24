@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import {
   OidcSecurityService,
   OpenIdConfiguration,
@@ -68,6 +68,11 @@ export class AuthService {
       .subscribe((result) => console.warn(result));
   }
 
+  public getAuthorizationTokenHeaderValue(): Observable<string> {
+    return this.oauthService
+      .getAccessToken()
+      .pipe(map((token) => `Bearer ${token}`));
+  }
   //
   // public handleCallback() {
   //   return this.oauthService.loadDiscoveryDocumentAndLogin();
